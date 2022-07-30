@@ -15,7 +15,7 @@ const options = {
     console.log(selectedDates[0]);
     selectedDate = selectedDates[0];
     if (selectedDates[0] < new Date()) {
-      Notiflix.Notify.failure('Please choose a date in the future');
+      Notiflix.Notify.failure(`Please choose a date in the future`);
       btnStart.setAttribute('disabled', true);
     } else {
       btnStart.removeAttribute('disabled', '');
@@ -30,7 +30,7 @@ btnStart.addEventListener('click', () => {
 function timeOut() {
     const getTimeComponent = selectedDate - new Date();
     if (getTimeComponent <= 0) {
-        Notiflix.Notify.success('Timer is Over!');
+        Notiflix.Notify.success(`Timer is Over!`);
         clearInterval(timerId);
         return;
     };
